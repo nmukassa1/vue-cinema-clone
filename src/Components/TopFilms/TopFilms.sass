@@ -1,0 +1,28 @@
+@use '../../_Master/master'
+    
+.top-films
+    padding: master.$defaultPadding
+
+    &__header
+        position: relative
+        padding-top: 3px
+        &::before
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            height: 2px
+            width: 30px
+            background-image: master.$themeGradient
+
+
+.top-films__list
+    display: grid
+    grid-template-columns: repeat(5, 1fr)
+    gap: 50px
+
+.card-title
+    text-align: center
+    font-weight: 400
+    font-size: 1rem
+    line-height: 20px

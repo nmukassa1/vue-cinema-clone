@@ -1,0 +1,85 @@
+img{
+    width: 100%
+}
+
+.hero-slide{
+    overflow: hidden;
+}
+
+.slide{
+    display: flex;
+    align-items: center;
+    /* overflow: scroll; */
+    /* scroll-snap-type: x mandatory; */
+    transition: all .8s ease
+}
+
+.slide-item{
+    flex-shrink: 0;
+    width: 100%;
+    position: relative;
+    /* scroll-snap-align: start; */
+}
+
+
+.slide-item__movie::after{
+    content: '';
+    width: 100%;
+    height: 130px;
+    background-image: linear-gradient(to top, hsla(0, 0%, 0%), hsla(0, 100%, 0%, 0));
+    position: absolute;
+    bottom: 0;
+    z-index: 999;
+}
+
+.control-panel{ 
+    position: absolute;
+    left: 50%;
+    bottom: 6%;
+    transform: translateX(-50%);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.control-panel__title h1{
+    font-weight: 300;
+    margin: 0 0 10px;
+}
+
+.control-panel__play-trailer{
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 1000px;
+    height: 70px;
+    width: 70px;
+    color: white;
+    display: grid;
+    place-content: center;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.control-panel__play-trailer svg{
+    width: inherit;
+}
+
+.book-now{
+    box-sizing: content-box;
+    border-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient(to right bottom, #eec42a, #b74d1c);
+    border-image-slice: 1;
+    min-width: fit-content;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1.3rem;
+}
+
+
+.age-classification img{
+    width: 22px;
+    float: left;
+    margin-right: 5px;
+}
