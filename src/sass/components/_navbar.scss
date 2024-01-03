@@ -27,13 +27,25 @@ nav{
     }
 }
 
-#user-menu{
-    font-size: .875rem
+.user{
+    display: flex;
+    align-items: center;
+    margin: 0 7px 0 auto;
 
-    a+a{
-        margin-left: 15px
+    @include breakpoints.breakpoint-up(large){
+        margin: 0;
     }
+}
+
+#user-menu{
+    font-size: .875rem; 
+    a { color: colors.$grey;}
+    a+a { margin-left: 15px}
     a:hover{color: white;}
+    display: none;
+    @include breakpoints.breakpoint-up(large){
+        display: initial;
+    }
 }
 
 #account_search{

@@ -8,7 +8,7 @@
 .cinema-finder{
     position: relative;
     gap: 30px;
-    margin-top: 25px;
+    padding: 25px 0;
 
     h2{
         flex-shrink: 0;
@@ -18,13 +18,13 @@
 .bar{
     height: 2px;
     width: 100%;
-    bottom: -20px;
+    bottom: 0;
     background-image: colors.$theme-gradient;
     position: absolute;
 } 
 
 .cinema-finder__button{
-    border: 1px solid #777;
+    border: 1px solid colors.$grey;
 }
 
 

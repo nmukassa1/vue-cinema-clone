@@ -17,18 +17,20 @@ function Navbar() {
                 <Link>gift cards</Link>
             </nav>
 
-            <div id="user-menu">
-                <Link>Log In</Link>
-                <Link>Join</Link>
-            </div>
+            <div className='user'>
+                <div id="user-menu">
+                    <Link>Log In</Link>
+                    <Link>Join</Link>
+                </div>
 
-            <div id="account_search">
-                <button>
-                    <FontAwesomeIcon icon={faUser} />
-                </button>
-                <button>
-                    <FontAwesomeIcon icon={faMagnifyingGlass} />
-                </button>
+                <div id="account_search">
+                    <button>
+                        <FontAwesomeIcon icon={faUser} />
+                    </button>
+                    <button>
+                        <FontAwesomeIcon icon={faMagnifyingGlass} />
+                    </button>
+                </div>
             </div>
 
             <div id='menu'>
