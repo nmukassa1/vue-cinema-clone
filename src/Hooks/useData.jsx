@@ -10,7 +10,8 @@ function useData() {
         type: 'movie',
         age: require('../Assets/15-film-classification.png'),
         poster: require('../Assets/napoleon-poster.webp'),
-        id: '01'
+        id: '01',
+        logline: `Napoleon is a spectacle-filled action epic that details the checkered rise and fall of the iconic French Emperor Napoleon Bonaparte.`
         },
         theHungerGames: {
             title: 'The Hunger Games: The Ballard Of Songbirds And Snakes',

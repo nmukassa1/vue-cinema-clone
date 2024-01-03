@@ -1,12 +1,11 @@
-import './CinemaFinder.css'
-import useData from '../../Hooks/useData'
+import {useState} from 'react'
+import {Link} from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faMagnifyingGlass, faXmark} from '@fortawesome/free-solid-svg-icons'
-import {Link} from 'react-router-dom'
-import {useState} from 'react'
+import useData from '../../Hooks/useData'
+import './CinemaFinder.css'
 
 function CinemaFinder({placeholder}) {
-    console.log(placeholder)
 
     const [toggleDropdown, setToggleDropdown] = useState('')
 

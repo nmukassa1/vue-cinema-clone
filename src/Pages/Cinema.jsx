@@ -1,7 +1,12 @@
 import { useParams } from "react-router-dom";
 import useData from "../Hooks/useData";
 
+import '../sass/Cinema.css'
+
 function Cinema() {
+
+    //slide scroll back to top of page
+    // window.scrollTo(0,0)
 
     const {location, id} = useParams();
     const {locationShowings, filmDb} = useData()
@@ -35,8 +40,19 @@ function Cinema() {
 
     // console.log(movie, cinema , globalScheduel, currentFilmScheduel)
     return ( 
-        <div>
-            <img src={movie.img} alt={movie.alt} />
+        <div id="film-details">
+            <div id="film-details__container">
+                <div id="film-details__wrapper">
+                    <div id="film-details__poster">
+                        <img src={movie.poster} alt={movie.alt} />
+                    </div>
+                    <div>
+                        <h1>{movie.title}</h1>
+                        <p>{movie.logline}</p>
+                        <p className="cheaper-online">£1 cheaper online</p>
+                    </div>
+                </div>
+            </div>
         </div>
      );
 }

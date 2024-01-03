@@ -1,9 +1,9 @@
-import useData from "../../Hooks/useData";
+import {useState, useEffect, useRef} from 'react'
+import {Link} from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay} from '@fortawesome/free-solid-svg-icons'
+import useData from "../../Hooks/useData";
 import './HeroSlide.css'
-import {Link} from 'react-router-dom'
-import {useState, useEffect, useRef} from 'react'
 
 function HeroSlide() {
 
