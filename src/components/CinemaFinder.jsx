@@ -1,11 +1,11 @@
-import {useState} from 'react'
-import {Link} from 'react-router-dom'
+import useData from '../Hooks/useData'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faMagnifyingGlass, faXmark} from '@fortawesome/free-solid-svg-icons'
-import useData from '../../Hooks/useData'
-import './CinemaFinder.css'
+import {Link} from 'react-router-dom'
+import {useState} from 'react'
 
 function CinemaFinder({placeholder}) {
+    console.log(placeholder)
 
     const [toggleDropdown, setToggleDropdown] = useState('')
 
@@ -20,7 +20,7 @@ function CinemaFinder({placeholder}) {
     
 
     return ( 
-        <div className='cinema-finder default-page-padding'>
+        <div className='cinema-finder container'>
             <h2 className='section-title'>
                 SEE WHAT'S ON AT
             </h2>
@@ -58,6 +58,8 @@ function CinemaFinder({placeholder}) {
             </div>
 
             <Link className='cinema-finder__button'>GO</Link>
+
+            <div className="bar"></div>
         </div>
     );
 }

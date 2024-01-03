@@ -1,29 +1,20 @@
-import {useEffect} from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import './App.css';
-import './index.css'
-import Navbar from './Components/Navbar/Navbar.jsx'
-import Home from './Pages/Home'
-import Cinema from './Pages/Cinema.jsx';
- 
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import './sass/dist/styles.css'
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 function App() {
 
-  
- 
-  useEffect(() => {
-    window.scrollTo(0,0)
-  }, [])
-
   return (
-    <BrowserRouter>
-      <div className="App">
+    <div className='App'>
+      <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />}/>
-          <Route path='/cinema/:location/film/:title/:id' element={<Cinema />} />
+          <Route path="/" element={<Home />} />
         </Routes>
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </div>
   );
 }
 

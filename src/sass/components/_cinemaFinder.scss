@@ -1,3 +1,5 @@
+@use '../util/colors';
+
 .cinema-finder, .cinema-finder__dropdown{
     display: flex;
     align-items: center;
@@ -6,16 +8,20 @@
 .cinema-finder{
     position: relative;
     gap: 30px;
-    padding: 30px 147px;
+    margin-top: 25px;
+
+    h2{
+        flex-shrink: 0;
+    }
+    // padding: 30px 147px;
 }
-/* .cinema-finder::after{
-    content: '';
+.bar{
     height: 2px;
     width: 100%;
-    bottom: 0;
-    background-image: linear-gradient(90deg, #eec42a, #b74d1c);
+    bottom: -20px;
+    background-image: colors.$theme-gradient;
     position: absolute;
-} */
+} 
 
 .cinema-finder__button{
     border: 1px solid #777;
@@ -34,21 +40,21 @@
     text-align: left;
     display: flex;
     background: transparent;
-    color: #777;
-    border-bottom: 1px solid #777
+    color: colors.$grey;
+    border-bottom: 1px solid colors.$grey
 }
 .cinema-finder__dropdown-icon{
     margin-left: auto;
 }
 
 .cinema-finder a{
-    border: 1px solid #777;
+    border: 1px solid colors.$grey;
     padding: 10px 35px;
 }
 
 .dropdown-menu{
     background: black;
-    border: 1px solid #777;
+    border: 1px solid colors.$grey;
     width: 400px;
     height: 360px;
     position: absolute;
@@ -69,21 +75,19 @@
 }
 
 .dropdown-menu__title{
-    background-image: linear-gradient(90deg,#dc6a1a,#eec42a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    @include colors.bgGradient;
     font-weight: 400;
 }
 
 .dropdown-menu__search{
     display: flex;
-    border-bottom: 1px solid #777;
+    border-bottom: 1px solid colors.$grey;
     padding-bottom: 10px;
 }
 
 input{
     width: 100%;
-    color: #777;
+    color: colors.$grey;
     background: transparent;
     border: none;
 }
@@ -95,7 +99,7 @@ input:focus{
     width: 100%;
     text-align: left;
     padding-bottom: 10px;
-    border-bottom: 1px solid #777;
+    border-bottom: 1px solid colors.$grey;
     color: white;
 }
 .dropdown-item:hover{
