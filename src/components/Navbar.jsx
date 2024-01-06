@@ -1,8 +1,16 @@
 import {Link} from 'react-router-dom'
+import {useState} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser,  faMagnifyingGlass, faBars} from '@fortawesome/free-solid-svg-icons'
+import { faUser,  faMagnifyingGlass, faBars, faXmark} from '@fortawesome/free-solid-svg-icons'
 
 function Navbar() {
+
+    const [handleDisplayToggle, setHandleDisplayToggle] = useState('');
+
+    function handleToggle(){
+        handleDisplayToggle === '' ? setHandleDisplayToggle('nav-menu__toggle') : setHandleDisplayToggle('')
+    }
+
     return ( 
         <header className='container'>
             <Link to="/" className='logo'>
@@ -34,9 +42,17 @@ function Navbar() {
             </div>
 
             <div id='menu'>
-                <button>
+                <button onClick={handleToggle}>
                     <FontAwesomeIcon icon={faBars} />
                 </button>
+            </div>
+
+            <div className={`menu-dropdown ${handleDisplayToggle}`}>
+                <div className="menu-dropdown__container container">
+                    <div className="close-button">
+                        <button onClick={handleToggle}>{<FontAwesomeIcon icon={faXmark} />}</button>
+                    </div>
+                </div>
             </div>
         </header>
     );

@@ -38,7 +38,8 @@ function HeroSlide() {
             }
         } 
 
-        setInterval(newSlide, 6000)
+        // setInterval(newSlide, 6000)
+        console.log('NOTE: Slide has been paused. Needs fixing. Come back to when ready')
     }, [])
 
     

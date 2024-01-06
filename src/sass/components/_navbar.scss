@@ -1,9 +1,11 @@
 @use '../util/colors';
 @use '../util/breakpoints';
 
+$headeHeight: 100px;
+
 header{
     display: flex;
-    height: 100px;
+    height: $headeHeight;
     align-items: center;
     justify-content: space-between;
 }
@@ -48,6 +50,7 @@ nav{
     }
 }
 
+
 #account_search{
     margin-left: 30px;
     display: flex;
@@ -62,10 +65,53 @@ nav{
     font-size: inherit;
 }
 
+#account_search{
+    @include breakpoints.breakpoint-down(medium){
+        font-size: 1.4rem;
+    }
+}
+
+
 #menu{
     display: block;
-
+    button{
+        font-size: 1.7rem;
+    }
     @include breakpoints.breakpoint-up(large){
         display: none;
+    }
+}
+
+.menu-dropdown{
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(100vw);
+    @include breakpoints.breakpoint-down(medium){
+        transition: all ease .7s;
+    }
+}
+
+.nav-menu__toggle{
+    transform: translateX(0);
+}
+
+.menu-dropdown__container{
+    height: 100%;
+
+    .close-button{
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        height: $headeHeight;
+        width: 100%;
+    
+        button{
+            font-size: 1.4rem;
+        }
     }
 }

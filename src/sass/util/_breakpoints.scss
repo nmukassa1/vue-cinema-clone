@@ -6,8 +6,21 @@ $breakpoints-up: (
     'xlarge': 90rem
 );
 
+//424.89, 899.89, 1439.89
+$breakpoints-down: (
+    'small': 25.56rem,
+    'medium': 56.24rem,
+    'large': 89.99rem
+);
+
 @mixin breakpoint-up($size){
     @media(min-width: map-get($breakpoints-up, $size)){
+        @content
+    }
+}
+
+@mixin breakpoint-down($size){
+    @media(max-width: map-get($breakpoints-down, $size)){
         @content
     }
 }

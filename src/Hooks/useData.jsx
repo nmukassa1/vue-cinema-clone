@@ -111,6 +111,80 @@ function useData() {
                 ]
             }
         }
+    },
+    {
+        location: `Brighton`,
+        schedual: {
+            today: {
+                date: daysOfWeek[todaysDay],
+                movies: [
+                    {...filmDb.napoleon,
+                        time_screen: [
+                            {time: '12:00', screen: '01'},
+                            {time: '14:00', screen: '12'}
+                        ]
+                    },
+                    {...filmDb.theHungerGames,
+                        time_screen: [
+                            {time: '12:00', screen: '05'},
+                            {time: '14:00', screen: '11'}
+                        ]
+                    },
+                    {...filmDb.renaissance,
+                        time_screen: [
+                            {time: '18:00', screen: '05'},
+                            {time: '14:00', screen: '11'}
+                        ]
+                    }
+                ]
+            },
+            tomorrow: {
+                date: daysOfWeek[todaysDay + 1],
+                movies: [
+                    {...filmDb.napoleon,
+                        time_screen: [
+                            {time: '12:00', screen: '11'},
+                            {time: '14:00', screen: '13'}
+                        ]
+                    },
+                    {...filmDb.theHungerGames,
+                        time_screen: [
+                            {time: '12:00', screen: '05'},
+                            {time: '14:00', screen: '11'}
+                        ]
+                    },
+                    {...filmDb.renaissance,
+                        time_screen: [
+                            {time: '18:00', screen: '05'},
+                            {time: '14:00', screen: '11'}
+                        ]
+                    }
+                ]
+            },
+            nextDay1: {
+                date: daysOfWeek[todaysDay + 2],
+                movies: [
+                    {...filmDb.napoleon,
+                        time_screen: [
+                            {time: '12:00', screen: '11'},
+                            {time: '14:00', screen: '13'}
+                        ]
+                    },
+                    {...filmDb.theHungerGames,
+                        time_screen: [
+                            {time: '12:00', screen: '05'},
+                            {time: '14:00', screen: '11'}
+                        ]
+                    },
+                    {...filmDb.renaissance,
+                        time_screen: [
+                            {time: '18:00', screen: '05'},
+                            {time: '14:00', screen: '11'}
+                        ]
+                    }
+                ]
+            }
+        }
     }
     ]
 
