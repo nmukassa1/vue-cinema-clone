@@ -11,7 +11,7 @@ header{
 }
 
 
-nav{
+nav.desktop{
     display: none;
     a{
         color: colors.$grey;
@@ -28,6 +28,8 @@ nav{
         }
     }
 }
+
+
 
 .user{
     display: flex;
@@ -86,23 +88,24 @@ nav{
     width: 100vw;
     height: 100vh;
     z-index: 999;
-    background-color: black;
+    background: linear-gradient(110deg,#000 47%,#0d0d0d 0);
     position: absolute;
     top: 0;
-    left: 0;
-    transform: translateX(100vw);
+    right: -100vw;
     @include breakpoints.breakpoint-down(medium){
         transition: all ease .7s;
     }
+    
 }
 
+
 .nav-menu__toggle{
-    transform: translateX(0);
+    right: 0;
 }
 
 .menu-dropdown__container{
     height: 100%;
-
+    position: relative;
     .close-button{
         display: flex;
         align-items: center;
@@ -114,4 +117,30 @@ nav{
             font-size: 1.4rem;
         }
     }
+}
+
+nav.mobile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 20%;
+    font-size: 1.25rem;
+    gap: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    a{
+        display: block;
+    }
+}
+
+.menu-dropdown__socials{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.4rem;
+    color: colors.$grey;
+    position: absolute;
+    bottom: 10%;
+    margin: 0 20%;
 }

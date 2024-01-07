@@ -1,15 +1,32 @@
 import {Link} from 'react-router-dom'
 import {useState} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser,  faMagnifyingGlass, faBars, faXmark} from '@fortawesome/free-solid-svg-icons'
+import { faUser,
+        faMagnifyingGlass, 
+        faBars, 
+        faXmark
+    } from '@fortawesome/free-solid-svg-icons'
+import {faFacebookSquare,
+        faInstagramSquare,
+        faXTwitter,
+        faYoutube,
+        faTiktok
+} from '@fortawesome/free-brands-svg-icons'
 
 function Navbar() {
 
     const [handleDisplayToggle, setHandleDisplayToggle] = useState('');
 
     function handleToggle(){
-        handleDisplayToggle === '' ? setHandleDisplayToggle('nav-menu__toggle') : setHandleDisplayToggle('')
+        if(handleDisplayToggle === ''){
+            setHandleDisplayToggle('nav-menu__toggle')
+            document.querySelector('body').style.overflow = 'hidden'
+        } else{
+            setHandleDisplayToggle('')
+            document.querySelector('body').style.overflow = ''
+        }
     }
+
 
     return ( 
         <header className='container'>
@@ -17,7 +34,7 @@ function Navbar() {
                 <img src={require('../Assets/vue-logo.webp')} alt="logo" />
             </Link>
 
-            <nav className='navbar-pages'>
+            <nav className='desktop navbar-pages'>
                 <Link to="">what's on</Link>
                 <Link>trailers</Link>
                 <Link>coming soon</Link>
@@ -52,6 +69,23 @@ function Navbar() {
                     <div className="close-button">
                         <button onClick={handleToggle}>{<FontAwesomeIcon icon={faXmark} />}</button>
                     </div>
+
+                    <nav className='mobile navbar-pages'>
+                        <Link to="">what's on</Link>
+                        <Link>trailers</Link>
+                        <Link>coming soon</Link>
+                        <Link>big screen events</Link>
+                        <Link>gift cards</Link>
+                    </nav>
+
+                    <div className="menu-dropdown__socials">
+                     <FontAwesomeIcon icon={faFacebookSquare} />
+                     <FontAwesomeIcon icon={faXTwitter} />
+                     <FontAwesomeIcon icon={faInstagramSquare} />
+                     <FontAwesomeIcon icon={faYoutube} />
+                     <FontAwesomeIcon icon={faTiktok} />
+                    </div>
+
                 </div>
             </div>
         </header>
