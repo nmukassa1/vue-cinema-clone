@@ -151,10 +151,6 @@ nav.desktop a {
   }
 }
 
-.nav-menu__toggle {
-  right: 0;
-}
-
 .menu-dropdown__container {
   height: 100%;
   position: relative;

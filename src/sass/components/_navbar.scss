@@ -91,16 +91,12 @@ nav.desktop{
     background: linear-gradient(110deg,#000 47%,#0d0d0d 0);
     position: absolute;
     top: 0;
+    // display: none;
     right: -100vw;
     @include breakpoints.breakpoint-down(medium){
         transition: all ease .7s;
     }
     
-}
-
-
-.nav-menu__toggle{
-    right: 0;
 }
 
 .menu-dropdown__container{
