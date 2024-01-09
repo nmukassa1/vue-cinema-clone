@@ -67,7 +67,7 @@ function Navbar() {
 
             <div id='menu'>
                 <button 
-                // onClick={handleDropdownMenu}
+                onClick={handleDropdownMenu}
                 >
                     <FontAwesomeIcon icon={faBars} />
                 </button>
@@ -75,7 +75,7 @@ function Navbar() {
 
             {/* Mobile Nav / Dropdown Menu */}
             {/* COME BACK TO! */}
-            {/* <div ref={dropdownMenuu} className='menu-dropdown'>
+            <div ref={dropdownMenuu} className='menu-dropdown'>
                 <div className="menu-dropdown__container container">
                     <div className="close-button">
                         <button onClick={handleDropdownMenu}>{<FontAwesomeIcon icon={faXmark} />}</button>
@@ -98,7 +98,7 @@ function Navbar() {
                     </div>
 
                 </div>
-            </div> */}
+            </div>
         </header>
     );
 }

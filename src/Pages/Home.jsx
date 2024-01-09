@@ -21,7 +21,6 @@ function Home() {
 
             <TopFilms 
                 placeholder={locationShowings ? placeholder : 'Browse A-Z'} 
-                setPlaceholder={locationShowings ? setPlaceholder : null}
             />
         </div>
     );

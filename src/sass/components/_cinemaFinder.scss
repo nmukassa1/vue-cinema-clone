@@ -1,4 +1,5 @@
 @use '../util/colors';
+@use '../util/breakpoints';
 
 .cinema-finder, .cinema-finder__dropdown{
     display: flex;
@@ -12,21 +13,56 @@
 
     h2{
         flex-shrink: 0;
+        @include breakpoints.breakpoint-down(small){
+            margin-bottom: 0;
+        }
     }
     // padding: 30px 147px;
+
+    // &:before{
+    //     position: absolute;
+    //     bottom: 0;
+    //     left: 50%;
+    //     content: "";
+    //     width: 100%;
+    //     opacity: 0.6;
+    //     filter: blur(100px);
+    //     height: 100px;
+    //     max-width: 37.1875rem;
+    //     transform: translateX(-50%);
+    //     background: linear-gradient(to top, #de6a00 0, #0e0700 100%);
+    // }
+
+    &:after{
+        // Bottom Bar
+        content: '';
+        height: 2px;
+        width: 100%;
+        bottom: 0;
+        background-image: colors.$theme-gradient;
+        position: absolute;
+    }
+
+    @include breakpoints.breakpoint-down(medium){
+        flex-wrap: wrap;
+        row-gap: 10px;
+    }
+
 }
-.bar{
-    height: 2px;
-    width: 100%;
-    bottom: 0;
-    background-image: colors.$theme-gradient;
-    position: absolute;
-} 
 
 .cinema-finder__button{
     border: 1px solid colors.$grey;
+    &:hover{
+        box-shadow: 0 0 50px -10px hsl(0, 0%, 100%, .9)
+    }
 }
 
+.cinema-finder-venue-selector-box{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
 
 .cinema-finder__dropdown{
     width: 100%;
@@ -52,6 +88,10 @@
     padding: 10px 35px;
 }
 
+.handleDisplayToggle{
+    display: absolute;
+}
+
 .dropdown-menu{
     background: black;
     border: 1px solid colors.$grey;
@@ -63,6 +103,19 @@
     padding: 0 10px;
     display: none;
     z-index: 9;
+
+    @include breakpoints.breakpoint-down(medium){
+        position: fixed;
+        top: 0;
+        right: -100vw;
+        border: none;
+        display: block;
+        left: initial;
+        width: 100%;
+        height: 100vh;
+        transition: all ease .7s;
+    }
+
 }
 
 #dropdown-menu__header{
@@ -98,7 +151,7 @@ input:focus{
 .dropdown-item {
     width: 100%;
     text-align: left;
-    padding-bottom: 10px;
+    padding: 20px;
     border-bottom: 1px solid colors.$grey;
     color: white;
 }

@@ -1,13 +1,11 @@
 import useData from '../Hooks/useData'
 import {Link} from 'react-router-dom'
 
-function TopFilms({location}) {
+function TopFilms({placeholder}) {
 
-    const {filmDb, locationShowings} = useData()
+    const {filmDb} = useData()
     const filmArr = Object.values(filmDb)
 
-    const item = locationShowings.find((item) => item.location === location)
-    console.log(item)
     
 
     return ( 
@@ -20,7 +18,7 @@ function TopFilms({location}) {
                 {filmDb && 
                     filmArr.map((item) => (
                         <li className="card" key={item.title}>
-                            <Link to={`/cinema/${location}/film/${item.title}/${item.id}`}  >
+                            <Link to={`/cinema/${placeholder}/film/${item.title}/${item.id}`}  >
                                 <img src={item.poster} alt={item.alt} />
                                 <h3 className="card-title">{item.title}</h3>
                             </Link>
@@ -28,6 +26,10 @@ function TopFilms({location}) {
                     ))
                 }
             </ul>
+
+            <footer id='top-films-footer'>
+                <Link>All films at Vue {placeholder}</Link>
+            </footer>
         </div>
     );
 }

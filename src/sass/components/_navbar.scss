@@ -89,7 +89,7 @@ nav.desktop{
     height: 100vh;
     z-index: 999;
     background: linear-gradient(110deg,#000 47%,#0d0d0d 0);
-    position: absolute;
+    position: fixed;
     top: 0;
     // display: none;
     right: -100vw;
